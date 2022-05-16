@@ -1,6 +1,8 @@
 package exemplo;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ProdutoRepository {
@@ -39,11 +41,21 @@ public class ProdutoRepository {
         return res;
     }
 
+    public List<Produto> getAll() {
+        List<Produto> products = new ArrayList<Produto>();
+
+        for (Produto p : this.catalogo.values()) {
+            products.add(p);
+        }
+
+        return products;
+    }
+
     public Map<String, Produto> listProductByName(String query) {
         Map<String, Produto> productsFounded = new HashMap<>();
 
         for (Produto p : this.catalogo.values()) {
-            if (p.getNome().equals(query)) {
+            if (p.getNome().contains(query)) {
                 productsFounded.put(p.getId(), p);
             }
         }

@@ -1,6 +1,7 @@
 import exemplo.Lote;
 import exemplo.Produto;
 import exemplo.ProdutoRepository;
+import services.ProdutoService;
 
 public class Sistema {
 
@@ -21,7 +22,10 @@ public class Sistema {
 		System.out.println(PR.toString());
 		System.out.println(produto);
 		System.out.println(lote);
-		System.out.println(PR.listProductByName("Ovo"));
+//		System.out.println(PR.listProductByName("Ovo"));
 
+		ProdutoService ps = new ProdutoService();
+		System.out.println("produtos achados");
+		System.out.println(ps.ListProductsLote("Ovo"));
 	}
 }
