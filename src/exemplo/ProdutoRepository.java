@@ -39,6 +39,18 @@ public class ProdutoRepository {
         return res;
     }
 
+    public Map<String, Produto> listProductByName(String query) {
+        Map<String, Produto> productsFounded = new HashMap<>();
+
+        for (Produto p : this.catalogo.values()) {
+            if (p.getNome().equals(query)) {
+                productsFounded.put(p.getId(), p);
+            }
+        }
+
+        return productsFounded;
+    }
+
     @Override
     public String toString() {
         return "ProdutoRepository{" +

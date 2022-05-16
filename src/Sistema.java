@@ -21,7 +21,7 @@ public class Sistema {
 		System.out.println(PR.toString());
 		System.out.println(produto);
 		System.out.println(lote);
-
+		System.out.println(PR.listProductByName("Ovo"));
 
 	}
 }
